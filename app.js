@@ -1,7 +1,10 @@
 const express = require('express');
 const app = express();
+app.use(express.static('public'))
 const port = 4000
+const path = require('path');
 // Set EJS as templating engine
+app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res)=>{
@@ -13,7 +16,7 @@ app.get('/', (req, res)=>{
         hobbies:['coding', 'teaching', 'travel']}
 
 
-res.render('home', {data:data});
+res.render('pages/home', {data:data});
     
 });
 
