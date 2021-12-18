@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-
+const port = 4000
 // Set EJS as templating engine
 app.set('view engine', 'ejs');
 
@@ -17,8 +17,8 @@ res.render('home', {data:data});
     
 });
 
-const server = app.listen(4000, function(){
+const server = app.listen(port, function(){
 
-    console.log('listening to port 4000')
+    console.log(`listening to port ${port}`)
 
 });
